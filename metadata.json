@@ -1,0 +1,8 @@
+{
+  "name": "Girdhar Morari Google Review Assistant",
+  "description": "Customer Google Review writing assistant, bilingual review suggestions library, and QR code generator for Girdhar Morari, Mathura.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

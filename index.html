@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Polyfill/shim window.fetch setter to support sandboxed iframe inspector extensions
+      (function() {
+        try {
+          let _fetch = window.fetch ? window.fetch.bind(window) : undefined;
+          Object.defineProperty(window, 'fetch', {
+            configurable: true,
+            enumerable: true,
+            get: function() {
+              return _fetch;
+            },
+            set: function(fn) {
+              _fetch = fn;
+            }
+          });
+        } catch (e) {
+          try {
+            let _pFetch = Window.prototype.fetch;
+            Object.defineProperty(Window.prototype, 'fetch', {
+              configurable: true,
+              enumerable: true,
+              get: function() { return _pFetch; },
+              set: function(fn) { _pFetch = fn; }
+            });
+          } catch (_) {}
+        }
+      })();
+    </script>
+    <title>Girdhar Morari | Guest House near Dwarika dheesh, Hotel near Vishram Ghar, Gujrat Samaj Guest House Mathura</title>
+    <meta name="description" content="Girdhar Morari, Mathura: Guest House near Dwarika dheesh, hotel near vishram ghar, and near gujrat samaj guest house. Access honest Google review writing suggestions and QR code standee generator." />
+    <meta name="keywords" content="Guest House near Dwarika dheesh, hotel near vishram ghar, gujrat samaj guest house, Girdhar Morari Mathura, Mathura guest house, hotels in Mathura, Dwarkadhish temple guest house, Vishram Ghat hotel" />
+    <meta property="og:title" content="Girdhar Morari | Guest House near Dwarika dheesh & Hotel near Vishram Ghar" />
+    <meta property="og:description" content="Official review assistant for Girdhar Morari, Mathura — convenient Guest House near Dwarika dheesh, hotel near vishram ghar, and gujrat samaj guest house." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Girdhar Morari, Mathura" />
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <!-- Google Fonts for English and Hindi typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#FFFDF9] text-[#2C2320] antialiased selection:bg-[#E67E22]/20 selection:text-[#58111A]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
